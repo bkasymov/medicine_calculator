@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор тромбоэмболических рисков при беременности</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Антенатальная и постнатальная оценка факторов риска и тактика ведения беременности</h1>
+    <form id="riskForm">
+        <!-- Предсуществующие факторы риска -->
+        <div class="section">
+            <h2>Предсуществующие факторы риска</h2>
+            <label><input type="checkbox" value="4" class="riskFactor"> Предшествующее ВТЭО (за исключением однократного эпизода, связанного с большим хирургическим вмешательством) (4 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Предшествующее ВТЭО, спровоцированное большим хирургическим вмешательством (3 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Подтвержденное наличие тромбофилии высокого риска (3 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Сопутствующие заболевания (3 балла)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Возраст (>35 лет) (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Ожирение (1 или 2 балла)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> ≥3 родов (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Курение (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Варикозное расширение вен нижних конечностей тяжелой степени (1 балл)</label>
+        </div>
+
+        <!-- Акушерские факторы риска -->
+        <div class="section">
+            <h2>Акушерские факторы риска</h2>
+            <label><input type="checkbox" value="1" class="riskFactor"> Преэклампсия во время текущей беременности (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> ВРТ/ЭКО (только антенатально) (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Многоплодная беременность (1 балл)</label>
+            <label><input type="checkbox" value="2" class="riskFactor"> Кесарево сечение в родах (2 балла)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Плановое кесарево сечение (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Вагинальное оперативное родоразрешение (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Продолжительные роды (>24 часов) (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Послеродовое кровотечение (>1 литра или переливание крови) (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Преждевременные роды <37+0 недель при данной беременности (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Мертворождение в настоящую беременность (1 балл)</label>
+        </div>
+
+        <!-- Преходящие факторы риска -->
+        <div class="section">
+            <h2>Преходящие факторы риска</h2>
+            <label><input type="checkbox" value="3" class="riskFactor"> Любая хирургическая процедура во время беременности или послеродового периода (3 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Неукротимая рвота (3 балла)</label>
+            <label><input type="checkbox" value="4" class="riskFactor"> СГЯ (только первый триместр) (4 балла)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Системная инфекция в настоящее время (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Ограничение подвижности, обезвоживание (1 балл)</label>
+        </div>
+
+        <!-- Кнопка расчета -->
+        <button type="button" onclick="calculateRisk()">Рассчитать риск</button>
+    </form>
+
+    <!-- Результат -->
+    <div id="result"></div>
+
+    <!-- Таблица дозировки -->
+    <div id="doseResult"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
