@@ -3,27 +3,38 @@ body {
     padding: 20px;
     max-width: 900px;
     margin: auto;
-    background-color: #f9f9f9;
+    background-color: #e0f7e0;
+    /* Светло-зеленый фон */
+    color: #333;
+    /* Темный текст для контраста */
 }
 
-h1, h2 {
+h1,
+h2 {
     text-align: center;
+    color: #388e3c;
+    /* Темно-зеленый цвет заголовков */
 }
 
 .section {
     margin-bottom: 20px;
     padding: 10px;
     background-color: #fff;
-    border: 1px solid #ccc;
+    /* Белый фон для секций */
+    border: 1px solid #388e3c;
+    /* Темно-зеленая рамка */
     border-radius: 8px;
 }
 
 .section label {
     display: block;
     margin-bottom: 5px;
+    color: #388e3c;
+    /* Темно-зеленый цвет текста */
 }
 
-.section input {
+.section input,
+.section select {
     margin-right: 10px;
 }
 
@@ -33,23 +44,43 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #388e3c;
+    /* Темно-зеленая кнопка */
     color: white;
     border: none;
     border-radius: 5px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2e7d32;
+    /* Темнее при наведении */
 }
 
-#result, #doseResult {
+#result,
+#doseResult {
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
     padding: 10px;
-    background-color: #e9ecef;
+    background-color: #e8f5e9;
+    /* Светло-зеленый фон */
     border-radius: 8px;
+    border: 1px solid #388e3c;
+    /* Темно-зеленая рамка */
+}
+
+.note {
+    border: 2px solid #ff0000;
+    /* Красная рамка */
+    background-color: #fff3cd;
+    /* Светло-желтый фон */
+    padding: 15px;
+    border-radius: 8px;
+    color: #856404;
+    /* Темно-коричневый текст */
+    font-weight: bold;
+    /* Жирный текст */
+    margin-bottom: 20px;
 }
 
 table {
@@ -58,12 +89,16 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #c8e6c9;
+    /* Светло-зеленый фон заголовков таблицы */
+    color: #333;
+    /* Темный текст для контраста */
 }

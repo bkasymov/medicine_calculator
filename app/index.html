@@ -1,63 +1,153 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор тромбоэмболических рисков при беременности</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <div class="note">
+        <h2>Внимание!</h2>
+        <p>Разработчик настоящего калькулятора не несёт ответственность за корректность расчётов.</p>
+        <p>Будьте внимательны и пересчитывайте вручную в случае сомнений.</p>
+    </div>
+
+    <!-- Примечание -->
+    <div class="note">
+        <h2>Примечание:</h2>
+        <p>При антенатальном поступлении в стационар рассмотреть возможность тромбопрофилактики.</p>
+        <p>В случае продления пребывания в стационаре (более 3 дней) или повторного поступления в стационар в
+            послеродовом периоде, рассмотреть возможность тромбопрофилактики.</p>
+        <p>Пояснение: У пациентов с выявленным риском кровотечения следует обсудить баланс рисков кровотечения и
+            тромбоза при консультации с гемотологом, имеющим опыт в отношении тромбоза и кровотечения при беременности.
+        </p>
+    </div>
     <h1>Антенатальная и постнатальная оценка факторов риска и тактика ведения беременности</h1>
     <form id="riskForm">
         <!-- Предсуществующие факторы риска -->
         <div class="section">
             <h2>Предсуществующие факторы риска</h2>
-            <label><input type="checkbox" value="4" class="riskFactor"> Предшествующее ВТЭО (за исключением однократного эпизода, связанного с большим хирургическим вмешательством) (4 балла)</label>
-            <label><input type="checkbox" value="3" class="riskFactor"> Предшествующее ВТЭО, спровоцированное большим хирургическим вмешательством (3 балла)</label>
-            <label><input type="checkbox" value="3" class="riskFactor"> Подтвержденное наличие тромбофилии высокого риска (3 балла)</label>
-            <label><input type="checkbox" value="3" class="riskFactor"> Сопутствующие заболевания (3 балла)</label>
+            <label><input type="checkbox" value="4" class="riskFactor"> Предшествующее ВТЭО (за исключением однократного
+                эпизода, связанного с большим хирургическим вмешательством) (4 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Предшествующее ВТЭО, спровоцированное большим
+                хирургическим вмешательством (3 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Подтвержденное наличие тромбофилии высокого
+                риска (3 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Сопутствующие заболевания (например,
+                онкологическое заболевание; параксизмальная ночная гемоглобинурная, протезированные клапаны, сердечная
+                недостаточность;, активная системная красная волчанка, воспалительная полиарттропатия или воспалительное
+                заболевание кишечника; нефротический синдром; сахарный диабет I типа с нефропатией; серповидноклеточная
+                анемия; наркомания с внутренним введением наркотиков в настоящее время) (3 балла)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Семейный анамнез неспровоцированной или
+                связанное с воздействием эстрогена ВТЭО у родственника первой степени родства</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Известная тромбофилии низкого риска (без ВТЭО)
+                (1 балл)</label>
             <label><input type="checkbox" value="1" class="riskFactor"> Возраст (>35 лет) (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Ожирение (1 или 2 балла)</label>
+            <label>
+                Ожирение
+                <select class="riskFactor">
+                    <option value="1">1 балл</option>
+                    <option value="2">2 балла</option>
+                </select>
+            </label>
             <label><input type="checkbox" value="1" class="riskFactor"> ≥3 родов (1 балл)</label>
             <label><input type="checkbox" value="1" class="riskFactor"> Курение (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Варикозное расширение вен нижних конечностей тяжелой степени (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Варикозное расширение вен нижних конечностей
+                тяжелой степени (1 балл)</label>
         </div>
 
         <!-- Акушерские факторы риска -->
         <div class="section">
             <h2>Акушерские факторы риска</h2>
-            <label><input type="checkbox" value="1" class="riskFactor"> Преэклампсия во время текущей беременности (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Преэклампсия во время текущей беременности (1
+                балл)</label>
             <label><input type="checkbox" value="1" class="riskFactor"> ВРТ/ЭКО (только антенатально) (1 балл)</label>
             <label><input type="checkbox" value="1" class="riskFactor"> Многоплодная беременность (1 балл)</label>
             <label><input type="checkbox" value="2" class="riskFactor"> Кесарево сечение в родах (2 балла)</label>
             <label><input type="checkbox" value="1" class="riskFactor"> Плановое кесарево сечение (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Вагинальное оперативное родоразрешение (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Продолжительные роды (>24 часов) (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Послеродовое кровотечение (>1 литра или переливание крови) (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Преждевременные роды <37+0 недель при данной беременности (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Мертворождение в настоящую беременность (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Вагинальное оперативное родоразрешение, в том
+                числе с применением ротационных акушерских щипцов(1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Продолжительные роды (>24 часов) (1
+                балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Послеродовое кровотечение (>1 литра или
+                переливание крови) (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Преждевременные роды &lt; 37+0 недель при данной
+                беременности (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Мертворождение в настоящую беременность (1
+                балл)</label>
         </div>
 
         <!-- Преходящие факторы риска -->
         <div class="section">
             <h2>Преходящие факторы риска</h2>
-            <label><input type="checkbox" value="3" class="riskFactor"> Любая хирургическая процедура во время беременности или послеродового периода (3 балла)</label>
+            <label><input type="checkbox" value="3" class="riskFactor"> Любая хирургическая процедура во время
+                беременности или послеродового периода (за исключением наложения швовна промежность сразу после родов),
+                например, аппендектомия, послеродовая стерелизация (3 балла)</label>
             <label><input type="checkbox" value="3" class="riskFactor"> Неукротимая рвота (3 балла)</label>
             <label><input type="checkbox" value="4" class="riskFactor"> СГЯ (только первый триместр) (4 балла)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Системная инфекция в настоящее время (1 балл)</label>
-            <label><input type="checkbox" value="1" class="riskFactor"> Ограничение подвижности, обезвоживание (1 балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Системная инфекция в настоящее время (1
+                балл)</label>
+            <label><input type="checkbox" value="1" class="riskFactor"> Ограничение подвижности, обезвоживание (1
+                балл)</label>
         </div>
 
         <!-- Кнопка расчета -->
         <button type="button" onclick="calculateRisk()">Рассчитать риск</button>
     </form>
 
+    <!-- Новая форма для расчета дозировки на основе веса -->
+    <h2>Расчет дозировки на основе веса</h2>
+    <form id="weightForm">
+        <label for="weight">Вес пациента (кг):</label>
+        <input type="number" id="weight" name="weight" required min="0" step="0.1">
+        <button type="button" onclick="calculateDosage()">Рассчитать дозировку</button>
+    </form>
+
+    <!-- Результат расчета дозировки -->
+    <div id="dosageResult"></div>
+
     <!-- Результат -->
     <div id="result"></div>
 
     <!-- Таблица дозировки -->
-    <div id="doseResult"></div>
-
+    <div id="doseResult">
+        <h3>Расчет режима дозирования НМГ для профилактики ВТЭО</h3>
+        <table>
+            <tr>
+                <th>Профилактические дозы</th>
+                <th>Масса тела до беременности</th>
+                <th>Эноксапарин натрия</th>
+                <th>Надропарин кальция</th>
+            </tr>
+            <tr>
+                <td>2 балла: постнатально (10 дней)</td>
+                <td>
+                    <50 кг</td>
+                <td>20 мг (0,2 мл)</td>
+                <td>2850 ME (0,3 мл)</td>
+            </tr>
+            <tr>
+                <td rowspan="3">≥3 баллов: (антенатально) и постнатально (6 недель)</td>
+                <td>50-90 кг</td>
+                <td>40 мг (0,4 мл)</td>
+                <td>5700 ME (0,6 мл)</td>
+            </tr>
+            <tr>
+                <td>91-130 кг</td>
+                <td>60 мг (0,6 мл)</td>
+                <td>7600 ME (0,8 мл)</td>
+            </tr>
+            <tr>
+                <td>Более 130 кг</td>
+                <td>0,6 мг/кг/сутки</td>
+                <td>86 ЕД/кг/сутки</td>
+            </tr>
+        </table>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>

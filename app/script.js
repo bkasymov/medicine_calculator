@@ -9,15 +9,15 @@ function calculateRisk() {
     if (totalScore >= 4) {
         riskLevel = 'Высокий риск';
         recommendations = 'Рассмотреть возможность тромбопрофилактики с 1 триместра';
-    } else if (totalScore >= 3) {
+    } else if (totalScore === 3) { // TODO check scores
         riskLevel = 'Повышенный риск';
-        recommendations = 'Рассмотреть возможность тромбопрофилактики с 28 недель';
+        recommendations = 'Рассмотреть возможность тромбопрофилактики с 28 недели';
     } else if (totalScore >= 2) {
         riskLevel = 'Промежуточный риск';
-        recommendations = 'Рассмотреть возможность тромбопрофилактики продолжительностью, по меньшей мере, 10 дней после родов';
+        recommendations = 'Рассмотреть возможность тромбопрофилактики продолжительностью, по меньшей мере, 10 дней';
     } else {
         riskLevel = 'Низкий риск';
-        recommendations = 'Мобилизация и избегание дегидратации';
+        recommendations = ' ?? Мобилизация и избегание дегидратации'; // TODO check recommendation
     }
 
     document.getElementById('result').innerHTML = `Общий балл: ${totalScore}.<br>Уровень риска: <strong>${riskLevel}</strong>.<br>Рекомендации: ${recommendations}`;
@@ -57,4 +57,32 @@ function calculateRisk() {
         </table>
     `;
     document.getElementById('doseResult').innerHTML = doseTable;
+}
+
+function calculateDosage() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    let enoxaparin = '';
+    let nadroparin = '';
+
+    if (weight < 50) {
+        enoxaparin = '20 мг (0,2 мл)';
+        nadroparin = '2850 ME (0,3 мл)';
+    } else if (weight >= 50 && weight <= 90) {
+        enoxaparin = '40 мг (0,4 мл)';
+        nadroparin = '5700 ME (0,6 мл)';
+    } else if (weight > 90 && weight <= 130) {
+        enoxaparin = '60 мг (0,6 мл)';
+        nadroparin = '7600 ME (0,8 мл)';
+    } else {
+        enoxaparin = `${(0.6 * weight).toFixed(1)} мг/кг/сутки`;
+        nadroparin = `${Math.round(86 * weight)} ЕД/кг/сутки`;
+    }
+
+    const resultHTML = `
+        <h3>Рекомендуемая дозировка:</h3>
+        <p>Эноксапарин натрия: ${enoxaparin}</p>
+        <p>Надропарин кальция: ${nadroparin}</p>
+    `;
+
+    document.getElementById('dosageResult').innerHTML = resultHTML;
 }
