@@ -17,7 +17,7 @@ function calculateRisk() {
         recommendations = 'Рассмотреть возможность тромбопрофилактики продолжительностью, по меньшей мере, 10 дней';
     } else {
         riskLevel = 'Низкий риск';
-        recommendations = ' ?? Мобилизация и избегание дегидратации'; // TODO check recommendation
+        recommendations = ''
     }
 
     document.getElementById('result').innerHTML = `Общий балл: ${totalScore}.<br>Уровень риска: <strong>${riskLevel}</strong>.<br>Рекомендации: ${recommendations}`;
